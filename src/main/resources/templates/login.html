@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>포스트</title>
+</head>
+
+<body onload="document.f.loginId.focus();">
+<h3>Login with Username and Password</h3>
+<div>
+    <div>
+        <form name="f" id="loginform" action="/loginProcessing" method="POST">
+            <div>
+                <h2 class="title">LOGIN</h2>
+            </div>
+            <div>
+                <div>
+                    <table>
+                        <caption>Band Login</caption>
+                        <tbody>
+                        <tr class="id__tr">
+                            <th>
+                                <label for="username"> ID </label>
+                            </th>
+                            <td><input type="text" name="username" id="username"></td>
+                        </tr>
+                        <tr class="password__tr">
+                            <th>
+                                <label for="password"> Password</label>
+                            </th>
+                            <td><input type="password" name="password" id="password"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <button class="btn-login" type="submit" data-type="success" id="login_btn">LOGIN</button>
+                <p>If you do not have an account, please <a href="/signup/step1">sign up</a>.</p>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

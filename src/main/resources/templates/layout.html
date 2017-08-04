@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/simple-sidebar.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<div class="header" id="header">
+    <h1 class="logo">
+        <a href="<%=rootPath%>/home"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4oG_2UhTCb94d4LrGAxF8v-mM0-igAkq4bNIOfEpzxm0fNelrX5n085g" th:width="150px" alt="google" /></a>
+    </h1>
+    <ul class="util">
+        <li class="admin">
+            <a href="/index">home</a>
+        </li>
+        <li class="logout">
+             <a href="/logout">Logout</a>
+        </li>
+    </ul>
+</div>
+<div id="wrapper" class="toggled">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li th:text="${session.id} + '님 환영합니다.'" style="color: #5bc0de;font-size: 12px;"></li>
+            <li>
+                <a href="/board/board_list">Board</a>
+            </li>
+            <li>
+                <a href="/account/my_account">Shortcuts</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container" layout:fragment="content">
+</div>
+
+<footer style="margin-top: 60px;margin-bottom: 30px;text-align: center;color: #313131;font-size: 0.9231rem;">
+    <div class="container">
+        <p style="color: #761c19;font-size: 12px;">© Son Inc. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
