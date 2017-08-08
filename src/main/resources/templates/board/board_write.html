@@ -14,6 +14,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
     <script>
 
     </script>
@@ -21,18 +22,22 @@
 
 <body>
 <div layout:fragment="content">
+    <div id="list">
+        <b>글 작성</b>
+    </div>
     <div id="container">
-            <table class="table table-striped table-bordered table-hover">
-                <tbody>
-                <tr>
-                    <td>제목</td>
-                </tr>
-                <tr>
-                    <td>내용</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <table class="table table-striped table-bordered table-hover">
+            <tbody>
+            <tr>
+                <th style="text-align: center; width: 120px">제목</th>
+                <td><input type="text" id="boardTitle" style="width: 1000px;"/></td>
+            </tr>
+            <tr>
+                <th style="text-align: center; width: 120px">내용</th>
+                <td><textarea id="boardText" style="width: 1000px;"></textarea></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 

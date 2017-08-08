@@ -1,11 +1,10 @@
 package com.ssw.shoppingmall.web;
 
 import com.ssw.shoppingmall.domain.AccountRepository;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpSession;
 
 @Controller

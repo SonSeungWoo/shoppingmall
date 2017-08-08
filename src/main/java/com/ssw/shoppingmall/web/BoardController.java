@@ -2,6 +2,8 @@ package com.ssw.shoppingmall.web;
 
 import com.ssw.shoppingmall.domain.BoardRepository;
 import com.ssw.shoppingmall.service.BoardService;
+
+import org.springframework.http.HttpRequest;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -29,17 +32,18 @@ public class BoardController {
     }
 
     @GetMapping("/board_list")
-    public String getBoardList(Model model, @AuthenticationPrincipal User user, HttpSession session) {
-        session.setAttribute("id", user.getUsername());
+    public String getBoardList(Model model,HttpSession session) {
+    //public String getBoardList(Model model, @AuthenticationPrincipal User user, HttpSession session) {
+        //System.out.println(session.getAttribute("id"));
+        //session.setAttribute("id", user.getUsername());
         model.addAttribute("boardList", boardRepository.findAll());
-        return "board_list";
+        return "board/board_list";
     }
 
     @GetMapping("/board_write")
     public ModelAndView getBoardWrite() {
-        ModelAndView mod = new ModelAndView();
-        mod.addObject("board_write");
-        return mod;
+        ModelAndView md = new ModelAndView();
+        md.addObject("board/board_write");
+        return md;
     }
-
 }

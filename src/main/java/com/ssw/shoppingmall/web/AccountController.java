@@ -1,5 +1,7 @@
 package com.ssw.shoppingmall.web;
 
+import javax.servlet.http.HttpSession;
+
 import com.ssw.shoppingmall.domain.AccountRepository;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -23,7 +25,8 @@ public class AccountController {
     }
 
     @GetMapping("/my_account")
-    public String my_account(Model model, @AuthenticationPrincipal User user) {
+    public String my_account(Model model, @AuthenticationPrincipal User user, HttpSession session) {
+        session.setAttribute("id", user.getUsername());
         model.addAttribute("account", accountRepository.findByUserName(user.getUsername()));
         return "account/my_account";
     }
