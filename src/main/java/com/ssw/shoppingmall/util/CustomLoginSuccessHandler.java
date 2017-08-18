@@ -1,6 +1,6 @@
 package com.ssw.shoppingmall.util;
 
-import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+		import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
 /**
  * Created by wisebirds on 2017-08-08.
